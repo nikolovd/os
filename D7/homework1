@@ -1,0 +1,27 @@
+Задача:Как се променя парола на потребител? Какви параметри приема тази команда? Как се намира информация за командата?
+
+Въпрос 1 
+Паролата може да бъде сменена с командата "sudo passwd" и името на потребителя 
+Пример:  sudo passwd elsys_user
+
+Въпрос 2 
+ sudo passwd elsys_user -d ---> Изтрива паролата на потребителя elsys_user
+ sudo passwd elsys_user -s ---> Изписва статут за паролата на потребител elsys_user
+  
+  Други опции са: 
+  -а ---> може да бъде използвана само с "-s" за показване на статуса на всички потребители.
+  -e ---> Принуждава даден потребилтел да смени паролата си при следващо влизане.
+  -i ---> Превръща потребителя в неактивен такъв след няколкото поредни дни, в които паролата е била изтекла ( expired)
+  
+  -k --->  Indicate password change should be performed only for expired authentication tokens (passwords). The user wishes to keep theirnon-expired tokens as before.
+  -l --->Lock the password of the named account. This option disables a password by changing it to a value which matches no possible encrypted value (it adds a ´!´ at the beginning of the password).
+  -n ---> Set the minimum number of days between password changes to MIN_DAYS. A value of zero for this field indicates that the user may change his/her password at any time.
+  -q ---> Quiet mode.
+  -r ---> Change password in REPOSITORY repository.
+  -u --->Unlock the password of the named account. This option re-enables a password by changing the password back to its previous value (to the value before using the -l option).
+  -w --> Set the number of days of warning before a password change is required. The WARN_DAYS option is the number of days prior to the password expiring that a user will be warned that 
+  -x ---> Set the maximum number of days a password remains valid. After MAX_DAYS, the password is required to be changed. 
+  
+  Въпрос 3
+  Цялата информация е може да бъде намерена с помощта на manual. 
+  man passwd 
